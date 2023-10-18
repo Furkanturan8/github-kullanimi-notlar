@@ -17,6 +17,7 @@
 	B. Local repoda version olusturma : git commit -m "version 2"
 	C. Remote repo ile local senkronize etme : git push
 
+    *** ALT BİLGİ 1 ***
 
 3-) Github'da beğendiğimiz ve erişim yetkimiz olan bir repoyu pcye indirme
 
@@ -58,7 +59,7 @@ Sonraki indirmelerde : D ve E maddelerini yapmamız yeterli olacaktır.
 
 	F. Eski kodlara dokunmadığımız için yeni eklenen kodları direk main branch'e ekleme : git merge furkan
 
-	*** ALT BİLGİ 1 ***
+	*** ALT BİLGİ 2 ***
 
 
 2-) Remote repo’da da branch olusturmak mumkundur. Remote branch kullanimi kisisel kullanimda cok gerekli olmasa da, ekip calismalarinda MUTLAKA yapilmasi gereken bir islemdir.
@@ -89,13 +90,19 @@ Local’de main branch’da oldugunuzu kontrol edin, farkli bir branch’da isen
 
 -------------------------------------------------------------------------------------------
 
-ALT BİLGİ 1 : Biz olusturdugumuz branch’da calisirken, main branch’da degisiklik yapiliyorsa, son basamakta sorun cikabilir.
+ALT BİLGİ 1 : "git pull origin main" -> Bu komut, uzak depodaki değişiklikleri yerel "main" dalına çeker ve çakışmaları çözmek için gerekli adımları atlar.
+
+Değişiklikleri inceledikten ve çakışmaları çözdükten sonra, projenizi tekrar yüklemeyi deneyin -> git push
+
+
+ALT BİLGİ 2 : Biz olusturdugumuz branch’da calisirken, main branch’da degisiklik yapiliyorsa, son basamakta sorun cikabilir.
 
 Merge edecegimiz branch’larda ayni satirda degisiklik yapildiysa Git kodlardan hangisini tercih edecegimizi bize soracaktir.
 
 Merge yaptiktan sonra Git cakisan her iki kodu aciklamalariyla getirip, bizden duzenleme yapmamizi bekleyecektir. Duzenleme yapilmazsa kod hata verecektir.
 
 Manuel duzeltme yaptiktan sonra commit yapmamiz gerekir.
+
 
 
 
