@@ -24,7 +24,7 @@
 	B. Klasör/Proje için komut ekranını açalım (sağ tikten terminali aç)
 	C. Klasör/Projeyi git'e tanıtalım : git init
 	D. Remote reponun linkini kopyalayalım
-	E. Remote repoyu pcdeki klasöre/projeye indirelim : git pull "githup repo linki"
+	E. Remote repoyu pcdeki klasöre/projeye indirelim : git pull "github repo linki"
 
 Sonraki indirmelerde : D ve E maddelerini yapmamız yeterli olacaktır.
 
