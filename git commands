@@ -1,0 +1,102 @@
+--- Github Kişisel Kullanım ---
+
+1-) Bilgisayardaki bir dosyayı ilk defa Git'e tanıtıp, Github'da olusturacağımız repoya yükleme
+
+	A. Localde repo oluşturma(projemiz git ile ilintili/ilişkili olacak) : git init
+	B. Klasordeki tüm dosyaları localdeki repoya yüklemek için : git add .
+	C. Local repoda version olusturma : git commit -m "2.version yüklendi"
+	D. Remote repoyu Github'da olusturun
+	E. Remote repodaki branch'i tanımlayın : git branch -M main
+	F. Remote repo ile local repoyu bağlama : git remote add origin "githubPath"
+	G. Remote repo ile local repoyu senkronize etme : git push -u origin main
+
+
+2-) Bilgisayarımızdaki local repoda yaptığımız değişiklikleri Github'daki repo ile senkronizasyonu
+
+	A. Klasörümüzdeki tüm dosyaları localdeki repoya yükleme : git add .
+	B. Local repoda version olusturma : git commit -m "version 2"
+	C. Remote repo ile local senkronize etme : git push
+
+
+3-) Github'da beğendiğimiz ve erişim yetkimiz olan bir repoyu pcye indirme
+
+	A. İstediğimiz repoyu pcye indireceğimiz ve senkronizasyon yapacağımız bir proje oluşturalım.
+	B. Klasör/Proje için komut ekranını açalım (sağ tikten terminali aç)
+	C. Klasör/Projeyi git'e tanıtalım : git init
+	D. Remote reponun linkini kopyalayalım
+	E. Remote repoyu pcdeki klasöre/projeye indirelim : git pull "githup repo linki"
+
+Sonraki indirmelerde : D ve E maddelerini yapmamız yeterli olacaktır.
+
+
+4-) Github'daki repoyu farklı bir klasöre indirip, o klasör üzerinden senkronizasyon
+
+	3. Bölümün Adımlar +
+	F. Remote repodaki branch'i tanımlayın : git branch -M main
+	G. Remote repo ile local repoyu bağlama : git remote add origin "github repo linki"
+
+
+-------------------------------------------------------------------------------------------
+
+--- Github Takım (COLLABORATION) Kullanım ---
+
+1-) PC'deki bir dosyanın kopyasını alıp, geliştirme başarılı ise ana dosyayı güncelleme
+
+	A. Localde branch(dal) oluşturma : git branch furkan
+	(hangi branch de old. görmek için : git branch)
+
+	B. Olusturduğumuz furkan branch'ine gitmek için : git checkout furkan
+
+	** ARTIK GECİŞ YAPTIĞIMIZ BRANCH'DE EKLEME SİLME YAPABİLİRSİN !
+	** EKLEME BİTTİYSE CODE ÇALIŞIYORSA YENİ BRANCH'DE COMMİT OLUSTUR !
+
+	C. Projenin yeni halini local repoya(depo) ekleme : git add .
+
+	D. Commit olusturma : git commit -m "version2 yüklendi"
+
+	E. Ana branch'a geçme : git checkout main
+
+	F. Eski kodlara dokunmadığımız için yeni eklenen kodları direk main branch'e ekleme : git merge furkan
+
+	*** ALT BİLGİ 1 ***
+
+
+2-) Remote repo’da da branch olusturmak mumkundur. Remote branch kullanimi kisisel kullanimda cok gerekli olmasa da, ekip calismalarinda MUTLAKA yapilmasi gereken bir islemdir.
+
+Local’de main branch’da oldugunuzu kontrol edin, farkli bir branch’da iseniz main’e gecin.
+
+
+	A. Local’de calismaya baslamadan once projenin son halini alma : git pull
+
+	B. Local’da calismak icin yeni bir branch olusturun : git branch deneme
+
+	C. Deneme branch’ina gecip(git checkout deneme) istediginiz degisiklikleri yapin ve sonra commit olusturun : git add . , git commit –m “commitIsmi”
+
+	D. Siz local’de deneme branch’inda calisirken remote calisan kod’da baskalarinin yaptigi degisiklikler olabilir. Oncelikle kendi degisikliklerinizin calisan kodun guncel haliyle karsilastirilmasinda fayda var. Bu durumda local’de main branch’a gecin (git checkout main), calisan kodun son halini pull edin (git pull). Boylece local main ile remote main ayni olur
+
+	E. Local’de deneme branch’ini main branch ile merge yapin. git merge main
+
+	** Cakisma varsa duzeltin, boylece sizin kodlariniz gonderilmeye hazir olacaktir.
+	** Simdi yaptigimiz projeleri ana projeye gonderme zamani
+
+	F. Local’de calisip son haline getirdigimiz branch’ta oldugunuzdan emin olun, yoksa gecis yapin : git branch deneme
+
+	G. Local’da son haline getirdigimiz branch’i ayni isimle uzak masaustune gonderin : git push --set-upstream origin deneme
+
+	H. Github’da yaptiginiz degisikliklerin calisan koda eklenmesi icin "pull request" olusturun
+
+	I. Sistem yoneticisi olusturdugunuz pull request group inceleyecek, cakismalar varsa giderip, calisan koda ekleyecektir.
+
+-------------------------------------------------------------------------------------------
+
+ALT BİLGİ 1 : Biz olusturdugumuz branch’da calisirken, main branch’da degisiklik yapiliyorsa, son basamakta sorun cikabilir.
+
+Merge edecegimiz branch’larda ayni satirda degisiklik yapildiysa Git kodlardan hangisini tercih edecegimizi bize soracaktir.
+
+Merge yaptiktan sonra Git cakisan her iki kodu aciklamalariyla getirip, bizden duzenleme yapmamizi bekleyecektir. Duzenleme yapilmazsa kod hata verecektir.
+
+Manuel duzeltme yaptiktan sonra commit yapmamiz gerekir.
+
+
+
+
