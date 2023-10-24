@@ -1,0 +1,23 @@
+git status : değişiklik yapılan dosyayı veya neyi commitleyebildiğini söyler(kısaca herhangi bir değişiklik var mı? Sorgular)
+
+git diff id_1..id_2  : iki commit arasındaki farklılıkları getirir
+
+git commit --amend : önceki commiti değiştirme(mesajı mesela) yapabilirsin
+    git commit --amend -m "Master 2 | bu amend ile eklenmiş yeni bir mesaj"
+
+git revert id : önceki commitlediğini getir (revert : eski haline dönme) burada id -> git log daki commit idleridir. (revert ün revertü de olabilir)
+
+git log -n 1 : en son commiti göster
+git log -n 2 : son 2 commiti göster
+
+git reset --hard id : direk o id deki commite döner ve üstteki commitleri siler
+
+git stash : son committen itibaren yapmış olduğunuz değişiklikleri gösterir(geçici olarak saklar)
+    git stash list : listeler
+    git stash pop : üsttekini getirir (siler pop yapar)
+    git stash apply stash_id( mesela:stash@{0} ) : git stash pop ile aynıdır fakat, silmez.
+
+git merge footer : bunu yaparsam her iki tarafın commitlerini birleştirir.
+git merge --squash footer(footer bir branch) : yine birleştirir fakat merge ile farkı --> Eğer bunu yaparsam footerın commitlerini master ile birleştirmez, ama son olarak commit yapma fırsatı verir. git commit -m "footer master ile birleştirildi"
+
+git merge --abort : conflict (çakışma) olduğunda bu merge ettiğinde oluşan çakışma işlemini geri alıyor.
